@@ -15,7 +15,7 @@ body:
     attributes:
       label: Summary
       description: What does the simulation get wrong?
-      placeholder: The Hohmann transfer to GEO reports 3.9 km/s of total delta-v; it should be about 3.94 km/s from a 300 km circular LEO.
+      placeholder: The Hohmann transfer to GEO reports 3.85 km/s of total delta-v; it should be about 3.893 km/s from a 300 km circular LEO.
     validations:
       required: true
 
@@ -39,7 +39,7 @@ body:
     attributes:
       label: Value the simulation produced
       description: Include units.
-      placeholder: "e.g. 3.9012 km/s"
+      placeholder: "e.g. 3.8512 km/s"
     validations:
       required: true
 
@@ -48,7 +48,7 @@ body:
     attributes:
       label: Value you expected
       description: Include units.
-      placeholder: "e.g. 3.9357 km/s"
+      placeholder: "e.g. 3.8926 km/s"
     validations:
       required: true
 
