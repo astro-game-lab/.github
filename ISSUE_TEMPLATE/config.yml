@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & general discussion
+    url: https://github.com/orgs/astro-game-lab/discussions
+    about: Please ask and answer questions in GitHub Discussions rather than opening an issue.
+  - name: Playtest feedback & game ideas
+    url: https://github.com/orgs/astro-game-lab/discussions
+    about: Got stuck, bored, or confused? Have a game concept to pitch? Start a Discussion — no issue needed.
+  - name: Security vulnerability
+    url: https://github.com/astro-game-lab/.github/security/advisories/new
+    about: Please report security issues privately via GitHub's private vulnerability reporting — not as a public issue.

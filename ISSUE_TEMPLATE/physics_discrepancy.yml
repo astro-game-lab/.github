@@ -1,0 +1,108 @@
+name: Physics discrepancy
+description: The simulation disagrees with reality, a reference tool, or a textbook.
+title: "[Physics]: "
+labels: ["physics", "bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        These are our highest-priority bugs — the honesty of the simulation is the whole point of this organization.
+
+        The most valuable part of this report is **your reference**: the independent source that tells us what the right answer is. Please fill that in even if you have to leave other fields blank.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What does the simulation get wrong?
+      placeholder: The Hohmann transfer to GEO reports 3.9 km/s of total delta-v; it should be about 3.94 km/s from a 300 km circular LEO.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Initial conditions
+      description: The full state needed to reproduce the number — orbital elements or state vector, epoch, central body, and the reference frame and units you are quoting them in.
+      placeholder: |
+        - Central body:
+        - Frame:
+        - Epoch:
+        - State (elements or r/v, with units):
+        - Force model / options in use:
+      render: markdown
+    validations:
+      required: true
+
+  - type: input
+    id: observed
+    attributes:
+      label: Value the simulation produced
+      description: Include units.
+      placeholder: "e.g. 3.9012 km/s"
+    validations:
+      required: true
+
+  - type: input
+    id: expected
+    attributes:
+      label: Value you expected
+      description: Include units.
+      placeholder: "e.g. 3.9357 km/s"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reference_type
+    attributes:
+      label: Where does your expected value come from?
+      options:
+        - Closed-form / hand calculation
+        - Textbook or published worked example
+        - Peer-reviewed paper
+        - GMAT
+        - JPL Horizons
+        - poliastro / astropy / skyfield / other library
+        - STK or other commercial tool
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: reference_detail
+    attributes:
+      label: Reference details
+      description: Cite it precisely — author, edition, and equation or example number; tool name and version; or the query you ran. Enough that we can reproduce your expected value independently.
+      placeholder: "e.g. Vallado, Fundamentals of Astrodynamics and Applications, 4th ed., Example 6-1, p. 326"
+    validations:
+      required: true
+
+  - type: textarea
+    id: analysis
+    attributes:
+      label: Suspected cause
+      description: Optional, but very welcome. Unit mismatch? Wrong frame? Degrees vs radians? Missing perturbation? A singularity at low eccentricity or inclination?
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Project version
+      placeholder: "e.g. v0.1.0 or commit abcdef1"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checklist
+      options:
+        - label: I have confirmed the units and reference frame I am comparing in actually match.
+          required: true
+        - label: I have checked this is not a documented, intentional gameplay simplification.
+          required: false
+        - label: I have searched existing issues and this is not a duplicate.
+          required: true
+        - label: I agree to follow this project's Code of Conduct.
+          required: true

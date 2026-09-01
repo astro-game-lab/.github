@@ -1,0 +1,102 @@
+name: Bug report
+description: Report something that is not working as expected.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report! Please fill in the sections below so we can reproduce and fix the issue efficiently.
+
+        Before submitting, please search existing issues to avoid duplicates.
+
+        **If the problem is that the simulation disagrees with reality** (wrong delta-v, wrong orbital period, a trajectory that looks physically impossible), please use the **Physics discrepancy** template instead.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A clear and concise description of the bug.
+      placeholder: When I do X, Y happens instead of Z.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps that reliably reproduce the issue. A minimal code snippet, save file, or scenario is ideal.
+      placeholder: |
+        1. Start ...
+        2. Do ...
+        3. Observe ...
+      render: markdown
+    validations:
+      required: true
+
+  - type: input
+    id: seed
+    attributes:
+      label: Seed and scenario
+      description: If the game shows a seed or scenario name, paste it here. Without it, simulation bugs are often impossible to reproduce.
+      placeholder: "e.g. seed 8675309, scenario 'LEO rendezvous'"
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happened? Include error messages, stack traces, screenshots, or a short clip if applicable.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Project version
+      description: The version or commit of the astro-game-lab project you are using.
+      placeholder: "e.g. v0.1.0 or commit abcdef1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, and browser or runtime version. For web builds, the browser matters a lot. Include GPU if the problem is visual.
+      placeholder: |
+        - OS:
+        - Browser / runtime:
+        - GPU (if graphics-related):
+        - Other relevant versions:
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else that might help us understand the issue — logs, console output, related issues, possible causes.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checklist
+      options:
+        - label: I have searched existing issues and this is not a duplicate.
+          required: true
+        - label: I have read the project's CONTRIBUTING.md.
+          required: false
+        - label: I agree to follow this project's Code of Conduct.
+          required: true
