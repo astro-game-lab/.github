@@ -1,0 +1,90 @@
+name: Task
+description: Backlog work — a feature, a refactor, or a chunk of a milestone.
+title: "<area>: "
+labels: ["triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For planned work from the backlog. If you are **reporting a problem** rather than proposing work, use the Bug report template — or the **Physics discrepancy** template if the simulation disagrees with reality, which is the highest-priority kind of bug here.
+
+        Title convention is `<area>: <imperative summary>`, for example `astro: solve Kepler's equation for hyperbolic orbits`.
+
+        Sizes larger than L should be split into separate issues.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What
+      description: One paragraph. What exists after this issue closes?
+      placeholder: A universal-variable Kepler propagator in `@hh/propagation`, replacing nothing and used by nothing yet.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: The requirement this satisfies, and the user-visible consequence. Cite the requirement identifier or document section where the repository has one.
+      placeholder: FR-005. Every trajectory in the game is evaluated through this, so it is on the critical path for the planner.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: |
+        Testable, observable statements. **An issue without these is not ready to be worked** — this field is required so the friction lands at creation rather than at grooming.
+
+        Write what a reviewer could check, not what you intend to do.
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: physics
+    attributes:
+      label: Physics notes
+      description: |
+        Required if this touches the simulation core or any claim in the repository's `docs/PHYSICS.md`; leave blank otherwise.
+
+        State the units and frame, cite the reference the algorithm comes from, and name the validation test you will add. A reference value must come from an independent source — a closed form, a published worked example, or another implementation. Never from the repository's own planning documents, whose numbers exist to be checked rather than trusted.
+      value: |
+        - **Units and frame:** 
+        - **Reference and citation:** 
+        - **Validation test to add:** 
+    validations:
+      required: false
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What this deliberately does not do. The most useful field on the form, and the one most often left empty.
+      placeholder: Does not add the Lambert solver, and does not touch the game layer.
+    validations:
+      required: false
+
+  - type: input
+    id: depends
+    attributes:
+      label: Depends on
+      description: Issues that must land first, as `#123, #124`.
+      placeholder: "#46, #48"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      description: Anything larger than L should be split.
+      options:
+        - "S — up to 2 hours"
+        - "M — up to a day"
+        - "L — one to two days"
+    validations:
+      required: true
