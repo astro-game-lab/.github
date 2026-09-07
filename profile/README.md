@@ -2,6 +2,10 @@
 
 Open-source astrodynamics and space games. Real orbital mechanics, playable.
 
+> ### ▸ [Play Hohmann Heist](https://astro-game-lab.github.io/hohmann-heist/)
+>
+> Steal things in orbit, using nothing but real orbital mechanics. It runs in the browser — no install, no account. `v0.2.0`, an alpha: seven contracts across two acts.
+
 ## What is astro-game-lab?
 
 **astro-game-lab** builds games where the space is not set dressing. Orbits are propagated, not animated along a spline; transfers cost the delta-v they actually cost; a rendezvous is hard for the same reasons it is hard in real life.
@@ -26,7 +30,13 @@ We think orbital mechanics is one of the most beautiful and least intuitive thin
 
 ## Repositories
 
-The organization is just getting started — the first repositories are on their way. Watch this space, or open a [Discussion](https://github.com/orgs/astro-game-lab/discussions) if you want to help shape what comes first.
+| Repository | |
+| --- | --- |
+| **[hohmann-heist](https://github.com/astro-game-lab/hohmann-heist)** | Steal things in orbit. A browser puzzle game where the only weapon is real orbital mechanics — **[play it here](https://astro-game-lab.github.io/hohmann-heist/)**. `v0.2.0`, an alpha: seven contracts across Acts I and II, every par computed rather than authored, and [the physics written down and checked](https://github.com/astro-game-lab/hohmann-heist/blob/main/docs/PHYSICS.md). |
+| [.github](https://github.com/astro-game-lab/.github) | This profile, and the community health files every repository here inherits. |
+| [.repo-template](https://github.com/astro-game-lab/.repo-template) | The template new game repositories are created from. |
+
+More games are on the roadmap. If you want to help shape what comes next, open a [Discussion](https://github.com/astro-game-lab/.github/discussions).
 
 ## How to contribute
 
